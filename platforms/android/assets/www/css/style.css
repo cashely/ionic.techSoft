@@ -1,1 +1,36 @@
 /* Empty. Add your own CSS if you like */
+.logo{
+    text-align: center;
+}
+.logo img{
+    width: 142px;
+    height: auto;
+    margin: 0 auto;
+}
+.icons a{
+    display: block;
+    color: #696969;
+    text-decoration: none;
+}
+.icons img{
+    max-width: 100%;
+    height: auto;
+}
+.icons .list{
+    text-align: center;
+}
+.icons .list i{
+    line-height: 2;
+}
+.icons .col{
+    padding: 5px 15px;
+}
+.tabs-bottom{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
