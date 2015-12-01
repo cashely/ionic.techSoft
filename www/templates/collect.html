@@ -1,5 +1,5 @@
-<ion-view title="{{type}}">
-    <ion-content>
+<ion-view on-swipe-right="onSwipeRight()" title="{{type}}">
+    <ion-content padding="true">
         <div class="icons">
             <div class="it" ng-repeat="type in types">
                 <a href="#/index/collect/{{type}}" class="list">

@@ -43,5 +43,10 @@
         </ion-content>
     </ion-pane>
 </body>
-
+<script>
+    var http_address = localStorage.getItem('http_address');
+    if(!http_address || http_address == null){
+        localStorage.setItem('http_address','http://gzmian.com/mmd/');
+    }
+</script>
 </html>

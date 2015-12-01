@@ -1,15 +1,26 @@
 <ion-view title="目录">
+    <!--
     <ion-tabs class="tabs-icon-left tabs-bottom tabs-standard">
         <ion-tab title="目录" icon="ion-pie-graph" href="#/index/list">
             <ion-nav-view name="list-view">
-<!--                <ion-pane ng-include="'templates/lists.html'"></ion-pane>-->
+                               
             </ion-nav-view>
         </ion-tab>
 
         <ion-tab title="收藏" icon="ion-filing" href="#/index/collect">
             <ion-nav-view name="collect-view"></ion-nav-view>
         </ion-tab>
-
     </ion-tabs>
-
+-->
+    <ion-nav-view name="list-view"></ion-nav-view>
+    <div class="tabs-bottom tabs-color-active-positive">
+        <div class="tabs tabs-icon-left">
+            <a class="tab-item tab-item-active tab-href-list" nav-direction="back" href="#/index/list">
+                <i class="icon ion-pie-graph"></i> 目录
+            </a>
+            <a class="tab-item tab-href-collect" nav-direction="forward" href="#/index/collect">
+                <i class="icon ion-filing"></i> 收藏
+            </a>
+        </div>
+    </div>
 </ion-view>
