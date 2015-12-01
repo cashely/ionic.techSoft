@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -16,4 +16,101 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+    $rootScope.setting=true;
 })
+.config(function($stateProvider,$urlRouterProvider,$ionicConfigProvider){
+    $ionicConfigProvider.tabs.position('bottom').style('standard');
+    $ionicConfigProvider.views.transition('ios');
+    $stateProvider
+        .state('index',{
+            url:'/index',
+            views:{
+                'index':{
+                    templateUrl:'templates/home.html',
+                    controller:function($scope){
+                        $scope.title="目录"
+                    }
+                }
+            }
+        })
+        .state('index.list',{
+            url:'/list',
+            views:{
+                'list-view':{
+                    templateUrl:'templates/lists.html',
+                    controller:function($scope){
+                        $scope.types=[0,1,2,3,4,5,6,7,8,9];
+                    }
+                }
+            } 
+        })
+        .state('index.list-child',{
+            url:'/list/:type',
+            views:{
+                'list-view':{
+                    templateUrl:'templates/lists.html',
+                    controller:function($scope,$stateParams){
+                        $scope.types=['0/1','1/1','2/1','3/1','4/1','5/1','6/1','7/1','8/1','9/1'];
+                    }
+                }
+            } 
+        })
+        .state('index.list-child-id',{
+            url:'/list/:type/:id',
+            views:{
+                'list-view':{
+                    template:'templates/lists.html',
+                    controller:function($scope,$stateParams){
+//                        $scope.types=['0/1','1/1','2/1','3/1','4/1','5/1','6/1','7/1','8/1','9/1'];
+                    }
+                }
+            } 
+        })
+        .state('index.collect',{
+            url:'/collect',
+            views:{
+                'collect-view':{
+                    templateUrl:'templates/collect.html',
+                    controller:function($scope){
+                        $scope.types=[0,1,2,3,4,5,6,7,8,9];
+                    }
+                }
+            }
+        })
+        .state('index.collect-id',{
+            url:'/collect/:id',
+            views:{
+                'collect-view':{
+                    templateUrl:'templates/collect.html',
+                    controller:function($scope,$stateParams){
+//                        $scope.types=[0,1,2,3,4,5,6,7,8,9];
+                    }
+                }
+            }
+        })
+        .state('setting',{
+            url:'/setting',
+            views:{
+                'index':{
+                    templateUrl:'templates/setting.html',
+                    controller:function($scope){
+                        $scope.setting=false;
+                    }
+                }
+            }
+        })
+        .state('form',{
+            url:'/setting/form',
+            views:{
+                'index':{
+                    templateUrl:'templates/setting-form.html',
+                    controller:function($scope){
+                        $scope.setting=false;
+                    }
+                }
+            }
+        })
+    
+    ;
+    $urlRouterProvider.otherwise('/index/list');
+});

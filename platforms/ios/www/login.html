@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>登录</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -24,16 +24,23 @@
 </head>
 
 <body ng-app="starter">
-    <ion-nav-bar align-title="center" class="bar-positive nav-title-slide-ios7">
-        <ion-nav-back-button class="button-clear">
-            <i class="ion-ios-arrow-back"></i> 返回
-        </ion-nav-back-button>
-        <ion-nav-buttons side="right" ng-show="setting">
-            <a class="button button-icon icon ion-gear-a" href="setting.html#/setting"></a>
-        </ion-nav-buttons>
-    </ion-nav-bar>
     <ion-pane>
-        <ion-nav-view name="index" class="slide-left-right"></ion-nav-view>
+        <ion-content scroll="false">
+            <div class="logo">
+                <img ng-src="img/logo-cm-5*5.jpg"/>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-person placeholder-icon"></i>
+                    <input type="text" placeholder="First Name"/>
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-locked placeholder-icon"></i>
+                    <input type="password" placeholder="Password"/>
+                </label>
+                <a href="index.html" class="button button-block button-positive">登 录</a>
+            </div>
+        </ion-content>
     </ion-pane>
 </body>
 
